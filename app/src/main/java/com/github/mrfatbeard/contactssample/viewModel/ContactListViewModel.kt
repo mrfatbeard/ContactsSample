@@ -38,4 +38,8 @@ class ContactListViewModel : ViewModel(), CoroutineScope {
     fun getLoadingLiveData(): LiveData<Boolean> {
         return loadingLiveData
     }
+
+    override fun onCleared() {
+        coroutineContext.cancel()
+    }
 }
